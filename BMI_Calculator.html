@@ -150,16 +150,14 @@
 
           document.getElementById("result").value = bmi.toFixed(2);
 
-          if (bmi < 18.5) {
+          if (bmi <= 18.5) {
             document.getElementById("result2").value = "Underweight";
-          } else if (18.5 < bmi < 24.9) {
+          } else if (bmi > 18.5 && bmi <= 24.9) {
             document.getElementById("result2").value = "Healthy";
-          } else if (25.0 < bmi < 29.9) {
+          } else if (bmi > 25.0 && bmi <= 29.9) {
             document.getElementById("result2").value = "Overweight";
           } else {
-            if (bmi < 18.5) {
-              document.getElementById("result2").value = "Obesity";
-            }
+            document.getElementById("result2").value = "Obesity";
           }
         });
     </script>
