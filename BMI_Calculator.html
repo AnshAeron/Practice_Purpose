@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: lightblue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 600px;
+    }
+    h1 {
+      text-align: center;
+      color: blue;
+    }
+    form {
+      border: 5px solid white;
+      border-radius: 8px;
+      height: 600px;
+      background-color: aliceblue;
+    }
+    .Age {
+      font-weight: bold;
+      margin: 50px 0px 0px 30px;
+    }
+    .Ht {
+      font-weight: bold;
+      margin: 50px 0px 0px 30px;
+      display: flex;
+    }
+    .Wt {
+      font-weight: bold;
+      margin: 50px 0px 0px 30px;
+      display: flex;
+    }
+    .button {
+      display: flex;
+      flex-direction: row;
+      margin: 10px 0px 0px 5px;
+      padding: 0px 0px 0px 20px;
+    }
+  </style>
+  <body>
+    <h1>BMI Calculator</h1>
+    <form>
+      <div class="Age">
+        <label for="">Age</label>
+        <input
+          type="text"
+          name=""
+          id="age"
+          placeholder="Enter your age"
+          style="height: 30px; margin-left: 50px; border-radius: 8px"
+        />
+      </div>
+      <div class="Ht">
+        <div>
+          <label for="">Height</label>
+          <div>(m)</div>
+        </div>
+        <input
+          type="text"
+          name=""
+          id="height"
+          placeholder="Enter your height"
+          style="width: 160px; margin-left: 40px; border-radius: 8px"
+        />
+      </div>
+      <div class="Wt">
+        <div>
+          <label for="">Weight</label>
+          <div>(kg)</div>
+        </div>
+        <input
+          type="text"
+          name=""
+          id="weight"
+          ;
+          placeholder="Enter your weight"
+          style="width: 160px; margin-left: 40px; border-radius: 8px"
+        />
+      </div>
+      <button
+        type="submit"
+        style="background-color: aquamarine; margin: 50px 10px 10px 40px"
+      >
+        Male
+      </button>
+      <button
+        type="submit"
+        style="background-color: aquamarine; margin: 50px 10px 10px 45px"
+      >
+        Female</button
+      ><br />
+      <button
+        id="btn1"
+        style="
+          text-align: center;
+          background-color: lightsalmon;
+          width: 300px;
+          margin: 30px 10px 10px 10px;
+        "
+      >
+        Calculate BMI
+      </button>
+      <div
+        style="
+          margin-left: 15px;
+          margin-top: 20px;
+          font-weight: bold;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <label for="">BMI:</label>
+        <input type="text" id="result" style="width: 100px" />
+      </div>
+
+      <div
+        style="
+          margin-left: 15px;
+          margin-top: 20px;
+          font-weight: bold;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <label for="">Result:</label>
+        <input type="text" id="result2" style="width: 100px" />
+      </div>
+    </form>
+    <script>
+      document
+        .getElementById("btn1")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          let age = parseFloat(document.getElementById("age".value));
+          let weight = parseFloat(document.getElementById("weight").value);
+          // console.log(hieght);
+          let height1 = parseFloat(document.getElementById("height").value);
+          let height2 = height1 / 100;
+
+          let bmi = weight / (height2 * height2);
+          //console.log(bmi);
+
+          document.getElementById("result").value = bmi.toFixed(2);
+
+          if (bmi < 18.5) {
+            document.getElementById("result2").value = "Underweight";
+          } else if (18.5 < bmi < 24.9) {
+            document.getElementById("result2").value = "Healthy";
+          } else if (25.0 < bmi < 29.9) {
+            document.getElementById("result2").value = "Overweight";
+          } else {
+            if (bmi < 18.5) {
+              document.getElementById("result2").value = "Obesity";
+            }
+          }
+        });
+    </script>
+  </body>
+</html>
