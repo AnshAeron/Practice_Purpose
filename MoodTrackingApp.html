@@ -113,45 +113,8 @@
       />
     </form>
     <script>
-      /*  document
-        .getElementById("save")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
 
-          let mood = String(document.getElementById("mood").value);
-          let thought = String(document.getElementById("thought").value);
-          let today = new Date();
-
-          const entries = [];
-
-          entries.push(mood);
-
-          document.getElementById(
-            "entry"
-          ).value = `${mood} - ${thought} - ${today}`;
-
-          const moodCount = {};
-          for (let m of entries) {
-            moodCount[m] = (moodCount[m] || 0) + 1;
-          }
-
-          let overviewText = "";
-          for (let m in moodCount) {
-            overviewText += `${m}: ${moodCount[m]}\n`;
-          }
-          document.getElementById("overview").value = overviewText;
-        });
-      document
-        .getElementById("clear")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-
-          document.getElementById("mood").value = "";
-          document.getElementById("thought").value = "";
-          document.getElementById("overview").value = "";
-        });*/
-
-      let entries = []; // ⬅️ global mood list
+      let entries = []; 
 
       document
         .getElementById("save")
@@ -162,10 +125,10 @@
           let thought = document.getElementById("thought").value;
           let today = new Date().toLocaleString();
 
-          // Add new mood to the list
+        
           entries.push(mood);
 
-          // Show entry
+          
           document.getElementById(
             "entry"
           ).value = `${mood} - ${thought} - ${today}`;
