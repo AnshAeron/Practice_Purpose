@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin-left: 400px;
+        background-color: plum;
+        align-items: center;
+        margin-bottom: 300px;
+        justify-content: center;
+        height: 700px;
+        width: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form
+      style="
+        background-color: lightblue;
+        height: 500px;
+        margin: 50px 0px 100px 0px;
+        border: solid;
+        border-radius: 5px;
+      "
+    >
+      <h1>😊 Mood Tracker Pro</h1>
+      <label style="font-weight: bold; margin-left: 20px; font-size: medium">
+        How are you feeling ?<br />
+      </label>
+      <select
+        id="mood"
+        style="
+          width: 300px;
+          height: 30px;
+          margin-left: 20px;
+          border: 2px solid grey;
+          margin-top: 10px;
+        "
+      >
+        <option>😄Happy</option>
+        <option>😡Angry</option>
+        <option>😢Sad</option>
+        <option>🥳Excited</option>
+        <option>😇Calm</option>
+      </select>
+
+      <br /><input
+        type="text"
+        id="thought"
+        placeholder="Write your thoughts here...."
+        style="
+          width: 300px;
+          height: 30px;
+          margin-left: 20px;
+          margin-top: 15px;
+          border: 2px solid lightblue;
+          border-radius: 4px;
+        "
+      /><br />
+      <button
+        type="submit"
+        id="save"
+        style="
+          margin-top: 10px;
+          margin-left: 20px;
+          height: 30px;
+          background-color: lightblue;
+          border-radius: 4px;
+          width: 100px;
+        "
+      >
+        📃Save Entry
+      </button>
+      <button
+        id="clear"
+        style="
+          margin-top: 10px;
+          margin-left: 20px;
+          height: 30px;
+          width: 100px;
+          background-color: lightblue;
+          border-radius: 4px;
+        "
+      >
+        🗑️Clear All
+      </button>
+
+      <h1 style="margin-left: 20px">📜 Your Entries</h1>
+      <label>
+        <input
+          type="text"
+          id="entry"
+          placeholder="No entries to display."
+          style="
+            margin-left: 20px;
+            height: 20px;
+            border: burlywood;
+            border-radius: 4px;
+            width: 400px;
+          "
+        />
+      </label>
+
+      <h1 style="margin-left: 20px">📊 Mood Overview</h1>
+      <input
+        type="text"
+        id="overview"
+        style="margin-left: 20px; width: 400px; height: 30px"
+      />
+    </form>
+    <script>
+      /*  document
+        .getElementById("save")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+
+          let mood = String(document.getElementById("mood").value);
+          let thought = String(document.getElementById("thought").value);
+          let today = new Date();
+
+          const entries = [];
+
+          entries.push(mood);
+
+          document.getElementById(
+            "entry"
+          ).value = `${mood} - ${thought} - ${today}`;
+
+          const moodCount = {};
+          for (let m of entries) {
+            moodCount[m] = (moodCount[m] || 0) + 1;
+          }
+
+          let overviewText = "";
+          for (let m in moodCount) {
+            overviewText += `${m}: ${moodCount[m]}\n`;
+          }
+          document.getElementById("overview").value = overviewText;
+        });
+      document
+        .getElementById("clear")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+
+          document.getElementById("mood").value = "";
+          document.getElementById("thought").value = "";
+          document.getElementById("overview").value = "";
+        });*/
+
+      let entries = []; // ⬅️ global mood list
+
+      document
+        .getElementById("save")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+
+          let mood = document.getElementById("mood").value;
+          let thought = document.getElementById("thought").value;
+          let today = new Date().toLocaleString();
+
+          // Add new mood to the list
+          entries.push(mood);
+
+          // Show entry
+          document.getElementById(
+            "entry"
+          ).value = `${mood} - ${thought} - ${today}`;
+
+          // Count moods
+          let moodCount = {};
+          for (let m of entries) {
+            moodCount[m] = (moodCount[m] || 0) + 1;
+          }
+
+          // Show overview
+          let overview = "";
+          for (let m in moodCount) {
+            overview += `${m}: ${moodCount[m]}\n`;
+          }
+          document.getElementById("overview").value = overview;
+        });
+
+      document
+        .getElementById("clear")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          document.getElementById("mood").value = "";
+          document.getElementById("thought").value = "";
+          document.getElementById("overview").value = "";
+          document.getElementById("entry").value = "";
+          entries = []; // clear all saved entries too
+        });
+    </script>
+  </body>
+</html>
