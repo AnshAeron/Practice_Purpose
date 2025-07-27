@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<>, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <form
+        style="
+          background-color: burlywood;
+          border: 2px solid black;
+          border-radius: 4px;
+          width: 400px;
+          height: 700px;
+          margin-left: 500px;
+        "
+      >
+        <h1 style="text-align: center">🗓️Day Name <br />Calendar Widget</h1>
+        <label
+          style="
+            text-align: center;
+            margin-left: 120px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+              sans-serif;
+            font-weight: bold;
+          "
+          >Enter a day number(1-7):
+          <br />
+
+          <input
+            type="text"
+            id="entry"
+            style="
+              margin-left: 170px;
+              width: 40px;
+              border-radius: 40px;
+              margin-top: 35px;
+            "
+          /><br />
+        </label>
+        <button
+          type="submit"
+          id="result2"
+          style="
+            background-color: palevioletred;
+            border-radius: 4px;
+            margin-left: 140px;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            width: 100px;
+            height: 30px;
+            color: white;
+            font-weight: bold;
+          "
+        >
+          Get Day Name
+        </button>
+        <hr />
+        <h3 style="margin-left: 140px; margin-top: 40px">Quick Select:</h3>
+        <div class="button">
+          <button
+            type="submit"
+            id="1"
+            style="
+              background-color: palevioletred;
+              border-radius: 4px;
+              margin-left: 50px;
+              margin-top: 20px;
+              width: 40px;
+              color: white;
+              font-weight: bold;
+            "
+          >
+            1
+          </button>
+          <button
+            type="submit"
+            id="2"
+            style="
+              background-color: palevioletred;
+              border-radius: 4px;
+              margin-left: 50px;
+              margin-top: 10px;
+              width: 40px;
+              color: white;
+              font-weight: bold;
+            "
+          >
+            2
+          </button>
+          <button
+            type="submit"
+            id="3"
+            style="
+              background-color: palevioletred;
+              border-radius: 4px;
+              margin-left: 50px;
+              margin-top: 10px;
+              width: 40px;
+              color: white;
+              font-weight: bold;
+            "
+          >
+            3
+          </button>
+          <button
+            type="submit"
+            id="4"
+            style="
+              background-color: palevioletred;
+              border-radius: 4px;
+              margin-left: 50px;
+              margin-top: 10px;
+              width: 40px;
+              color: white;
+              font-weight: bold;
+            "
+          >
+            4
+          </button>
+          <button
+            type="submit"
+            id="5"
+            style="
+              background-color: palevioletred;
+              border-radius: 4px;
+              margin-left: 50px;
+              margin-top: 10px;
+              width: 40px;
+              color: white;
+              font-weight: bold;
+            "
+          >
+            5
+          </button>
+          <button
+            type="submit"
+            id="6"
+            style="
+              background-color: palevioletred;
+              border-radius: 4px;
+              margin-left: 50px;
+              margin-top: 30px;
+              width: 40px;
+              color: white;
+              font-weight: bold;
+            "
+          >
+            6
+          </button>
+          <button
+            type="submit"
+            id="7"
+            style="
+              background-color: palevioletred;
+              border-radius: 4px;
+              margin-left: 50px;
+              margin-top: 10px;
+              width: 40px;
+              color: white;
+              font-weight: bold;
+            "
+          >
+            7
+          </button>
+        </div>
+        <input
+          type="text"
+          id="result1"
+          style="
+            background-color: rgb(0, 128, 0);
+            border-radius: 6px;
+            margin-top: 90px;
+            margin-left: 80px;
+            height: 30px;
+            width: 250px;
+            text-align: center;
+          "
+        />
+      </form>
+    </div>
+    <script>
+      document.getElementById("1").addEventListener("click", function (event) {
+        event.preventDefault();
+        let one = parseFloat(document.getElementById("1").value);
+        document.getElementById("result1").value = "Day 1 is Sunday";
+      });
+      document.getElementById("2").addEventListener("click", function (event) {
+        event.preventDefault();
+        let one = parseFloat(document.getElementById("1").value);
+        document.getElementById("result1").value = "Day 2 is Monday";
+      });
+      document.getElementById("3").addEventListener("click", function (event) {
+        event.preventDefault();
+        let one = parseFloat(document.getElementById("1").value);
+        document.getElementById("result1").value = "Day 3 is Tuesday";
+      });
+      document.getElementById("4").addEventListener("click", function (event) {
+        event.preventDefault();
+        let one = parseFloat(document.getElementById("1").value);
+        document.getElementById("result1").value = "Day 4 is Wednesday";
+      });
+      document.getElementById("5").addEventListener("click", function (event) {
+        event.preventDefault();
+        let one = parseFloat(document.getElementById("1").value);
+        document.getElementById("result1").value = "Day 5 is Thursday";
+      });
+      document.getElementById("6").addEventListener("click", function (event) {
+        event.preventDefault();
+        let one = parseFloat(document.getElementById("1").value);
+        document.getElementById("result1").value = "Day 6 is Friday";
+      });
+      document.getElementById("7").addEventListener("click", function (event) {
+        event.preventDefault();
+        let one = parseFloat(document.getElementById("1").value);
+        document.getElementById("result1").value = "Day 7 is Saturday";
+      });
+
+      document
+        .getElementById("result2")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          let day = parseFloat(document.getElementById("entry").value);
+          if (day == "1") {
+            document.getElementById("result1").value = "Day 1 is Sunday";
+          } else if (day == "2") {
+            document.getElementById("result1").value = "Day 2 is Monday";
+          } else if (day == "3") {
+            document.getElementById("result1").value = "Day 3 is Tuesday";
+          } else if (day == "4") {
+            document.getElementById("result1").value = "Day 4 is Wednesday";
+          } else if (day == "5") {
+            document.getElementById("result1").value = "Day 5 is Thursday";
+          } else if (day == "6") {
+            document.getElementById("result1").value = "Day 6 is Friday";
+          } else if (day == "7") {
+            document.getElementById("result1").value = "Day 7 is Saturday";
+          } else {
+            document.getElementById("result1").value =
+              "Please Enter a Valid Number";
+          }
+        });
+    </script>
+  </body>
+</html>
